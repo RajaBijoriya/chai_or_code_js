@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<style>
+    .main-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+</style>
+<body>
+    <div class="main-div">
+        <h1>Digital Clock</h1>
+        <h1 id="clock"></h1>
+        <!-- <button id="start">START</button> -->
+    </div>
+</body>
+<script>
+    const clock = document.querySelector("#clock");
+    // const start = document.querySelector("#start");
+    // start.addEventListener('click', setInterval(() => {
+    //     const date = new Date();
+    //         const hours = String(date.getHours()).padStart(2, '0');
+    //         const minutes = String(date.getMinutes()).padStart(2, '0');
+    //         const seconds = String(date.getSeconds()).padStart(2, '0');
+    //     clock.innerHTML = `${hours}:${minutes}:${seconds}`
+
+    // },1000))
+    setInterval(() => {
+         const date = new Date();
+        clock.innerHTML =  `${date.toLocaleTimeString()}`
+    }, 1000)
+    
+</script>
+</html>
