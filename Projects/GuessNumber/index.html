@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Number</title>
+    <style>
+      .main-div {
+        width: 700px;
+        height: 700px;
+        border: 2px solid black;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      #inp {
+        width: 200px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: medium;
+        padding: 8px;
+      }
+      #submit{
+        padding: 10px;
+        border-radius: 10px;
+        color: aliceblue;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+        <h1><p>Enter any number between 1 to 100</p></h1>
+      <form action="">
+         <label for="inp">Guess The Number</label>
+      <input
+        id="inp"
+        type="number"
+        name=""
+        id=""
+        placeholder="enter any number " />
+        <br>
+        <button id="submit">Submit Guess</button>
+      </form>
+      <h3>Previous Guess: <span id="prev-guess"></span></h3>
+      <h2>Total remaining Attempts: <span id="attempts">10</span></h2>
+      <div>
+        <h1>
+          Your Guess Number is <span id="guess"></span> and Real Number is
+          <span id="real"></span>
+        </h1>
+      </div>
+    </div>
+  </body>
+  <script>
+   const input = document.querySelector('#inp');
+   const preGuess = document.querySelector('#prev-guess');
+   const attempts = document.querySelector('#attempts')
+   const guess = document.querySelector('#guess');
+   const real = document.querySelector('#real');
+   const submit = document.querySelector('#submit')
+
+   submit.addEventListener('click', (e) => {
+     const value = input.target.e;
+     const random = Math.floor(Math.random() * (100)) + 1
+     if(value === random){
+
+     }
+   })
+
+  </script>
+</html>

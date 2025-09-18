@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hello">
+       Hello 
+    </div>
+    <div>
+        <ul id="images">
+            <li><img src="./img.png" class="a" id ='b' alt=""></li>
+            <li><img src="./img.png" class="a" id ='c' alt=""></li>
+            <li><img src="./img.png" class="a" id ='d' alt=""></li>
+            <li><img src="./img.png" class="a" id ='e' alt=""></li>
+            <li><img src="./img.png" class="a" id ='f' alt=""></li>
+            <li><img src="./img.png" class="a" id ='g' alt=""></li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+    document.querySelector('#hello').addEventListener('click', (e) => {
+      console.log(e);
+    }, false // ye eventPropogation hota he 
+    // jv event bubbling hota he toh hum event to hum false use krte 
+    // same jb hame eventCapturing krna hota he toh hum eski value true lete hai
+    // jese hum false me kya hoga pahle ui ka event triger hoga then apne jespe click kra uska hoga
+    // but true me pahle jaha click kra uska event triger hoga then ui kya 
+    // e.stopPropagation() mtlb hum bubble ko rok rhi he mean child ka event parent tk nhi jyga
+
+    ) // eski default value false he hoti he
+
+
+    // e.preventDefoult() means aap uske behavier ko rok erhi he
+
+
+    // kya kya imp he
+    // type, timestamp, defaoultPrevent, target, toElement, srcEelement, currentTarget, 
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey , shift, keyCode
+
+    document.querySelector('#images').addEventListener('click', (e) => {
+       let removeIt =  e.target.parentNode
+    //    removeIt.remove();
+
+    // we can use another way also 
+         removeIt.parentNode.removeChild(removeIt);
+    })
+
+</script>
+</html>

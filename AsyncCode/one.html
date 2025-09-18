@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="asynccc">Async Coding</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout() meko etna time do uske baad me kaam krunga apka ,
+    // setInterval() ek time dede utene delay me us kaam ko repeat krunga
+
+    const printF = () => {
+        console.log("hitesh")
+    }
+    setTimeout(
+    // yaha bus function ka refrence pass krna he 
+    printF
+    ,2000)
+
+    const change = () => {
+        document.querySelector('h1').innerHTML = "King rb 09"
+    }
+
+    const changeme = setTimeout(change, 4000);
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearTimeout(changeme)
+        console.log('stoped')
+    })
+
+</script>
+</html>

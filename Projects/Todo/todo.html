@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="todo" placeholder="Enter any task">
+    <button onclick="addTodo()">Add Todo</button>
+    <ul id="todoList"></ul>
+</body>
+<script> 
+
+   const todo = document.querySelector('#todo');
+   const todoList = document.querySelector('#todoList');
+
+   function addTodo() {
+    const input = todo.value.trim();
+
+    if(input === ''){
+        alert('Enter a task on this ');
+        return;
+    }
+
+    const li = document.createElement('li')
+    li.textContent = input.trim();
+    
+    li.addEventListener('click', () => {
+        li.classList.toggle('completed');
+    });
+    // edit 
+    const edit = document.createElement('button')
+    edit.textContent = 'Edit';
+    edit.onclick = (e) => {
+        e.stopPropagation();
+        const newTask = prompt('Upadate Your given task', li.firstChild.textContent);
+        if(newTask !== null && newTask.trim() !== ''){
+            li.firstChild.textContent = newTask.trim();
+        }
+    }
+
+    // delete 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+
+    deleteBtn.onclick = (e) => {
+        e.stopPropagation();
+
+        li.remove();
+    }
+
+    const group = document.createElement('span');
+    group.appendChild(edit);
+    group.appendChild(deleteBtn);
+
+    li.appendChild(group);
+    todoList.appendChild(li);
+    todo.value = '';
+ 
+ 
+  }
+</script>
+</html>

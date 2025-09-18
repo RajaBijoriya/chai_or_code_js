@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <div>
+      <h1>Todo List</h1>
+      <input type="text" id="todo" placeholder="Enter todo in this" />
+      <button onclick="addTodo()">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+  </body>
+  <script>
+    const todo = document.querySelector("#todo");
+    const taskList = document.querySelector("#taskList");
+
+    function addTodo() {
+      const input = todo.value.trim();
+      if (input === "") {
+        alert("Please enter a task!");
+        return;
+      }
+      const li = document.createElement("li");
+      li.textContent = input;
+      // deleted
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.onclick = (e) => {
+        e.stopPropagation(); // prevent maring as complete
+        li.remove();
+      };
+
+      // const editBtn 
+      const editBtn = document.createElement('button');
+      editBtn.textContent = 'Edit';
+      editBtn.onclick = (e) => {
+        e.stopPropagation();
+        const newTask = prompt('Edit your task: ', li.firstChild.textContent);
+        if(newTask !== null && newTask.trim() !== ''){
+            li.firstChild.textContent = newTask.trim();
+        }
+      }
+      const btnGroup = document.createElement('span');
+    btnGroup.className = 'btn-group';
+    btnGroup.appendChild(editBtn);
+    btnGroup.appendChild(deleteBtn);
+
+    li.appendChild(btnGroup);
+      taskList.appendChild(li);
+      todo.value = "";
+    }
+  </script>
+</html>
