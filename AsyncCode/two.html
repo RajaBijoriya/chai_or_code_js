@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .btn{
+        width: 100px;
+        height: 50px;
+
+      }
+    </style>
+</head>
+<body>
+    
+    <button class="btn" id="start">Start</button>
+    <button class="btn" id="stop">Stop</button>
+</body>
+<script>
+  // how to make random color 
+  const randomColor =  () => {
+    const hex = "0123456789ABCDEF";
+    let color = '#';
+    for(let i=0; i<6; i++){
+      color += hex[Math.floor(Math.random() * 16)]
+    }
+    return color;
+  }
+
+
+  let InerVal;
+
+  const startChnage = () => {
+    const change = () => {
+      document.querySelector('body').style.backgroundColor = randomColor();
+    }
+   InerVal =  setInterval(change, 1000);
+  }
+
+  const stopChange = () => {
+      clearInterval(InerVal)
+  }
+   document.querySelector('#start').addEventListener('click', startChnage)
+   document.querySelector('#stop').addEventListener('click', stopChange)
+</script>
+</html>

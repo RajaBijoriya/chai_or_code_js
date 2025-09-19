@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" id="start">Start</button>
+    <button class="btn" id="stop">Stop</button>
+</body>
+<script>
+    let printF = setInterval(console.log("hello"),2000);
+    document.querySelector('#start').addEventListener('click', () => {
+        printF()
+    })
+    document.querySelector('#stop').addEventListener('click', ()=> {
+        clearInterval(printF)
+    })
+</script>
+</html>

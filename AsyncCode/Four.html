@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>you enter this Key <span id="keyy"></span> : <span id="keycode"></span>
+    <span id="code"></span></h1>
+    
+</body>
+<script>
+    const word = document.querySelector('#keyy')
+    const keycode = document.querySelector('#keycode')
+    const code = document.querySelector('#code')
+    window.addEventListener('keydown', (event) => {
+        word.textContent = event.key
+        keycode.textContent = event.keyCode
+        code.textContent = event.code
+    })
+</script>
+</html>
