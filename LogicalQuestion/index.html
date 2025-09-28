@@ -1,0 +1,27 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="btn">Click</button>
+      <h1 id="hone"></h1>
+    </div>
+  </body>
+  <script>
+    const btn = document.querySelector("#btn");
+    const hone = document.querySelector("#hone");
+
+    btn.addEventListener("click", () => {
+      const promise = new Promise((res, rej) => {
+        res();
+      });
+      promise
+        .then(() => hone.textContent = "Promise is resolved")
+        .catch(() => hone.textContent = "Promise is rejected");
+    });
+  </script>
+</html> -->

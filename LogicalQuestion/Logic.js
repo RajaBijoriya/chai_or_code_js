@@ -64,17 +64,14 @@
 //     gender: "male",
 //     job: false
 // }
-// let val = 0;
+
 // function objLen(obj){
-//     for (const key in obj) {
-//       if(key){
-//         val++;
-//       }
-//     }
+//    let  val =  Object.keys(obj).length
+//    return val;
 
 // }
-// objLen();
-// console.log(val)
+
+// console.log(objLen(obj))
 
 
 // 7. In an array of objects filter out those objects which have gender's value male.
@@ -466,46 +463,340 @@
 
 // 24. Write a JavaScript function that reverse a number.
 
-let num = 12345;
-let val = 0;
 
-while(num){
-    let rem = num % 10;
-    val = rem + val * 10;
-    num = num / 10;
-}
-console.log(val)
 
-// 25. Write a javascript function that returns a passed string with letters in alphabetical order.
+
+
+
+
+
+
+// 🔎 What’s happening
+
+// num = num / 10 divides by 10 but keeps decimals (floating-point division).
+
+// Example:
+
+// 12345 / 10 = 1234.5
+
+// 1234.5 / 10 = 123.45
+
+// 123.45 / 10 = 12.345
+
+// … this never reaches 0 exactly, because it keeps shrinking but remains a positive decimal.
+
+// So while(num) never ends → infinite loop.
+
+// When JavaScript loops infinitely, the output eventually overflows and may look like Infinity.
+
+// ✅ Fix
+
+// You should use integer division so that digits drop off properly. In JavaScript, use Math.floor():
+
+// let num = 12345;
+// let val = 0;
+
+// while (num) {
+//     let rem = num % 10;
+//     val = val * 10 + rem;
+//     num = Math.floor(num / 10); // drop decimal part
+// }
+// console.log(val); // 54321
+
+// 🔹 Output:
+// 54321
+
+
+// 👉 This way, you’re reversing the number correctly.
+
+// let num = 12345;
+// let val = 0;
+
+// while(num){
+//     let rem = num % 10;
+//     val = val * 10 + rem;
+//     num = Math.floor(num / 10)
+// }
+// console.log(val)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 25. Write a javascript function that returns a passed string with letters in alphabetical order. ***
+
+
+
+
+// let str = 'dcba' // abcd
+
+
+// for(let )
+
+
+
+
+
+
 
 // 26. Write a Javascript function that accepts a string as a parameter and conversts the first
 // letter of each word of the string in upper case.
 
+
+// let str = "raja bijoriya";
+// let str2 = ""
+// const convertFirstLetter = (str) => {
+//     for(let i=0; i<str.length; i++){
+//         if(i === 0){
+//             str2 = str2 + str[i].toUpperCase();
+//         }
+//         else{
+//             str2 = str2 + str[i]
+//         }
+
+//     }
+// } 
+// convertFirstLetter(str);
+// console.log(str2)
+
+
+// function capitalizeWords(str) {
+//   return str
+//     .split(" ")
+//     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+//     .join(" ");
+// }
+
+// console.log(capitalizeWords("raja bijoriya and i love to code")); // "Raja Bijoriya"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 27. Write a javascript function to get the first element of an array. Passing a parameter 'n' will
 // return the first 'n' elements of the array.
+
+
+
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// let n = 8;
+// let arr1 = [];
+// const First_N_number = (arr, n) => {
+//     for(let i=0; i<n; i++){
+//         arr1.push(arr[i]);
+//     }
+// }
+
+// First_N_number(arr, n);
+// console.log(arr1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 28. Write a javascript function to get the number of occurrences of each letter in specified
 // string.
 
+
+
+
+
+// let str = "aaabbbbcccccdddd";
+// let str2 = ""
+
+// for(let i=0; i<str.length; i++){
+//     let count = 0;
+    
+//      // for skip if char is already present
+//      if (str2.includes(str[i])) continue;
+
+
+//     for(let j = 0; j<str.length; j++){
+//          if(str[i] === str[j]) count++;
+//     }
+//     str2 = str2 + str[i] + count + " ";
+// }
+// console.log(str2)
+
+
+
+
+
+
+
 // 29. write a javascript program to find the most frequent item of an array.
 
+
+
+
+// let arr = [1,2,3,4,4,4,5,5,6,6,3,3,3,3];
+// let val = 0;
+// let num = 0;
+
+// for(let i = 0; i<arr.length; i++){
+//      let count  = 0;
+//     for(let j = 0; j<arr.length; j++){
+//        if(arr[i] == arr[j]) count++;
+//     }
+//     if(val < count) {
+//         val = count;
+//         num = arr[i];
+//     }
+// }
+// console.log(`${num} is present most frequents times that is ${val}`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 30. write a javascript program to shuffle an array.
+
+
+
+
+
+
+
+// let arr = [3, 4, 5, 6, 7, 8];
+// let arr1 = []
+// let n = arr.length;
+
+// while(n) {
+//    arr1.push(arr[Math.floor(Math.random() * n)]);
+//    n--;
+// }
+
+// console.log(arr1)
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 31. How can you update the DOM based on user input in real-time (e.g., live preview of a
 // form)?
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 32. How would you handle form validation in real time and show error messages
 // dynamically?
 
+
+
+
+
+
+
+
+
+
+
+
+
 // 33. How do you find the closest ancestor element that matches a selector?
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 34. How would you toggle a class on an element when another element is clicked (e.g.,
 // show/hide sidebar)?
 
+
+
+
+
+
+
+
 // 35. Create a Show/Hide Password Toggle
+
+
+
+
+
+
 
 // 36. Create a Sticky Header on Scroll. The header becomes fixed to the top after scrolling
 // down. (Key concepts: scroll event, window.scrollY, classList.add/remove)
+
+
+
+
+
+
+
+
 
 // 37. What is a pure function, and why is it useful in UI rendering?
 
@@ -535,3 +826,195 @@ console.log(val)
 // centralize this logic in a utility?
 
 // 50. What are the different options and parameters available in toLocaleString
+
+
+
+// second last number in a array 
+
+
+// let arr = [1,2,3,4,5,6];
+// let firstMax = 0;
+// let secondMax = 0;
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i] > firstMax){
+//         firstMax = arr[i];
+//     }
+//      if (arr[i] > secondMax && arr[i] < firstMax)
+//     {
+//      secondMax = arr[i]
+
+//     }
+// }
+
+// console.log(secondMax, firstMax)
+
+//  let arr = [1, 2, 3, 4, 5, 6];
+//  // [6, 5, 4, 3, 2, 1]
+
+//  arr.sort((a,b) => b-a)
+//  console.log(arr[1])
+
+
+
+
+// 4. Infinite Currying
+
+// Implement a function that supports infinite currying.
+
+// add(1)(2)(3)(4)() // Output: 10
+
+// const add = (a) => {
+//    return (b) => {
+//        return (c) => {
+//           return (d) => {
+//             return a+b+c+d;
+//           }
+//        }
+//    }
+// }
+// console.log(add(1)(2)(3)(4));
+
+
+
+// 1. Deep Clone an Object
+
+// Write a function to deep clone an object without using structuredClone() or JSON.parse(JSON.stringify()).
+// ChatGPT said:
+
+// Great pick 👌 Deep cloning is a classic JavaScript interview challenge, because shallow cloning ({...obj} or Object.assign()) doesn’t copy nested objects/arrays properly.
+
+// Here’s how you can implement a deep clone function without using structuredClone() or JSON.stringify().
+
+// ✅ Solution: Recursive Deep Clone
+// function deepClone(obj) {
+//   // if obj is null or not an object, return it (base case)
+//   if (obj === null || typeof obj !== "object") {
+//     return obj;
+//   }
+
+//   // Handle Date
+//   if (obj instanceof Date) {
+//     return new Date(obj);
+//   }
+
+//   // Handle Array
+//   if (Array.isArray(obj)) {
+//     return obj.map(item => deepClone(item));
+//   }
+
+//   // Handle Object
+//   const clonedObj = {};
+//   for (let key in obj) {
+//     if (obj.hasOwnProperty(key)) {
+//       clonedObj[key] = deepClone(obj[key]); // recursive call
+//     }
+//   }
+//   return clonedObj;
+// }
+
+// 🔎 Example:
+// const original = {
+//   name: "Raja",
+//   age: 22,
+//   skills: ["React", "Node", "AI"],
+//   address: { city: "Delhi", pin: 110001 },
+//   joined: new Date("2024-01-01")
+// };
+
+// const copy = deepClone(original);
+
+// copy.name = "Bijoriya";
+// copy.skills.push("JavaScript");
+// copy.address.city = "Mumbai";
+
+// console.log("Original:", original);
+// console.log("Copy:", copy);
+
+
+// 👉 Output shows that changes in copy don’t affect original, proving it’s a true deep clone.
+
+// 9. Write a JavaScript function that returns the Fibonacci sequence up to a given number of terms. 
+
+// const Fibbo = (num) => {
+
+//     if(num == 1) return 0;
+//     if(num == 2) return 1;
+
+//     let a = 0;
+//     let b = 1;
+//     console.log(a)
+//     console.log(b)
+//     let c = 0;
+//     for(let i = 2; i<=num; i++){
+//         c = a+b;
+//         console.log(c);
+//         a = b;
+//         b = c;
+//     }
+// }
+
+// Fibbo(5);
+
+
+
+// /**
+//  * @param {number[]} nums
+//  * @return {number}
+//  */
+// let nums = [4,2,3,4];
+
+
+// var triangleNumber = function(nums) {
+    
+//     let nums1 = nums.sort((a,b) => a-b);
+//     return nums1;
+// };
+// console.log(triangleNumber(nums))
+
+
+
+// js interview questions 
+
+// function outer(outerVar){
+//     return function inner(innerVal){
+//         console.log(`outer: ${outerVar}, inner: ${innerVal}`)
+//     }
+// }
+
+// const clousrEx = outer("hello")
+// clousrEx("world")
+
+
+
+
+// 
+
+//2.5 Years Experienced Best JavaScript Interview
+// function name() {
+  
+// }
+// console.log(typeof(name)) // function
+// class hello {
+  
+// }
+// console.log(typeof(hello)) // function
+
+
+
+// create a promise without using new Promise()
+
+// const promise = async () => {
+//     return "hello" 
+// }
+
+// const res = promise(); 
+// console.log(res)
+
+
+// we reject this promise 
+// const promise = async () => {
+//     throw new Error;
+// }
+
+// const res = promise()
+// console.log(res)
