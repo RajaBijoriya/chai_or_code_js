@@ -1018,3 +1018,66 @@
 
 // const res = promise()
 // console.log(res)
+
+
+
+// Find the First Non-Repeating Character
+// Input: "aabbcddde" → Output: "c"
+
+// let val = "aabbcddde";
+// let str = ""
+// for(let i=0; i<val.length; i++){
+//   let count = 0;
+//   for(let j=0; j<val.length; j++){
+//     if(val[i] == val[j]) {
+//       count++;
+//     }
+//   }
+//   if(count==1){
+//     str = val[i];
+//   }
+// }
+// console.log(str);
+
+// let arr = [4, 1, 1, 2];
+// arr.sort((a,b) => a-b);
+// // console.log(arr)
+// let maxVal = 0; 
+// for(let i=0; i<arr.length; i++){
+//   if(arr[i] > maxVal) maxVal = arr[i];
+// }
+
+// // console.log(maxVal);
+
+// let missValue;
+// for(let i=0; i<arr.length; i++){
+//   for(let j=0; j<=maxVal; j++){
+//     if(arr[i] === j) break;
+//     else{
+//       missValue = j;
+//     }
+//   }
+// }
+
+// console.log(missValue);
+
+
+
+
+
+// let val = "aabbccdeffg";
+// let str = ""
+// for(let i=0; i<val.length; i++){
+//   let count = 0;
+//   for(let j=0; j<val.length; j++){
+//     if(val[i] == val[j]) {
+//       count++;
+//     }
+//   }
+//   if(count==1){
+//     str += val[i] + ",";
+    
+//   }
+// }
+
+// console.log(str);
