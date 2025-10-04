@@ -543,6 +543,27 @@
 
 
 // let str = 'dcba' // abcd
+// function sortString(str) {
+//     let arr = str.split('');   // convert string to array
+
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length - 1; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 // swap characters
+//                 let temp = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = temp;
+//             }
+//         }
+//     }
+
+//     return arr.join('');  // join back to string
+// }
+
+// // Example
+// let str = 'dcba';
+// console.log(sortString(str)); // abcd
+
 
 
 // for(let )
